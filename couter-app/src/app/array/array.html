@@ -1,0 +1,10 @@
+<h1>for loop</h1>
+
+@for(u of users;track u){
+    <h2>{{u}}</h2>
+}
+
+@for (student of student; track $index) {
+    <p>{{student.name}}, {{student.age}}, {{student.rollNo}}</p>
+    <button (click)="getName(student.name)">Get Name</button>
+}

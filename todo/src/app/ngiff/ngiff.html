@@ -1,0 +1,28 @@
+<p>ngiff works!</p>
+
+<!-- 
+<div *ngIf="login; elseBlock">
+    <a href="/">Login</a>
+</div>
+
+<ng-template #elseBlock>
+    <a href="/">Logout</a>
+</ng-template>  -->
+
+<div *ngIf="block ==0;">
+    <h1>Block 0</h1>
+    
+</div>
+
+<div *ngIf="block ==1;">
+    <h1>Block 1</h1>
+  
+</div>
+
+<div *ngIf="block ==2;">
+    <h1>Block 2</h1>
+    
+</div>
+
+<button (click)="updateBlock()">Update Block</button>
+

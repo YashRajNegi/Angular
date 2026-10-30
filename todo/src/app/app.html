@@ -1,0 +1,34 @@
+<div class="todo-app">
+  <h1>Todo App</h1>
+
+  <div class="task-form">
+    <input type="text" [(ngModel)]="todo" placeholder="Add a task" />
+    <button (click)="addTask()">Add Task</button>
+  </div>
+
+  <ul class="task-list">
+    @for (task of taskList; track task.id) {
+      <li class="task-item">
+        <span class="task-id">{{ task.id }}</span>
+        <span class="task-text">{{ task.task }}</span>
+        <button class="delete-btn" (click)="deleteTask(task.id)">Delete</button>
+      </li>
+    }
+  </ul>
+</div>
+
+
+<br>
+<br>
+<br>
+
+<app-ngfor></app-ngfor>
+
+<br>
+<br>
+<br>
+
+<app-ngiff></app-ngiff>
+
+
+<app-switch></app-switch> 

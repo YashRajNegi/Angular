@@ -1,0 +1,14 @@
+/* Global basic reset & typography */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background-color: #f1f5f9;
+  color: #334155;
+  padding: 32px 16px;
+  line-height: 1.5;
+}

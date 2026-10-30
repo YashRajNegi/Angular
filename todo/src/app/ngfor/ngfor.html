@@ -1,0 +1,20 @@
+<p>ngfor works!</p>
+
+
+
+<!-- <ul>
+  <li *ngFor="let student of studentData">{{ student.name }},{{ student.age }},{{ student.city }}</li>
+</ul> -->
+
+@for (student of studentData; track $index) {
+  <li>{{ student.name }},
+    {{ student.age }},
+  {{student.city}},
+
+  <ul>
+    @for (subject of student.subjects; track $index) {
+      <li>{{ subject }}</li>
+    }
+  </ul>
+  </li>
+}

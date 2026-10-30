@@ -1,0 +1,22 @@
+
+<p>switch works!</p>
+
+
+@switch (color) {
+  @case ('red') {
+    <h1 style="background-color: red;">Red</h1>
+  }
+  @case ('green') {
+    <h1 style="background-color: green;">Green</h1>
+  }
+  @case ('blue') {
+    <h1 style="background-color: blue;">Blue</h1>
+  }
+  @default {
+    <h1>No color matched</h1>
+  }
+}
+
+<button (click)="updateColor('red')">Change to Red</button>
+<button (click)="updateColor('green')">Change to Green</button>
+<button (click)="updateColor('blue')">Change to Blue</button>
