@@ -1,0 +1,123 @@
+<div class="container">
+
+  <h1>User Form</h1>
+
+
+  <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+
+    <h2>Add User</h2>
+
+    <div class="form-group">
+      <label>Name</label>
+
+      <input
+        type="text"
+        formControlName="name"
+        placeholder="Enter name"
+      >
+
+      @if (userForm.controls.name.touched &&
+            userForm.controls.name.invalid) {
+        <small class="error">
+          Name is required
+        </small>
+      }
+    </div>
+
+    <div class="form-group">
+      <label>Email</label>
+
+      <input
+        type="email"
+        formControlName="email"
+        placeholder="Enter email"
+      >
+
+      @if (userForm.controls.email.touched &&
+            userForm.controls.email.hasError('required')) {
+        <small class="error">
+          Email is required
+        </small>
+      }
+
+      @if (userForm.controls.email.touched &&
+            userForm.controls.email.hasError('email')) {
+        <small class="error">
+          Please enter a valid email
+        </small>
+      }
+    </div>
+
+    <div class="form-group">
+      <label>Password</label>
+
+      <input
+        type="password"
+        formControlName="password"
+        placeholder="Enter password"
+      >
+
+      @if (userForm.controls.password.touched &&
+            userForm.controls.password.hasError('required')) {
+        <small class="error">
+          Password is required
+        </small>
+      }
+
+      @if (userForm.controls.password.touched &&
+            userForm.controls.password.hasError('minlength')) {
+        <small class="error">
+          Password must be at least 6 characters
+        </small>
+      }
+    </div>
+
+    <button type="submit">
+      Add User
+    </button>
+
+  </form>
+
+  <hr>
+
+
+  <h2>Users</h2>
+
+  <input
+    type="text"
+    [(ngModel)]="search"
+    placeholder="Search by name or email"
+  >
+
+  @if (filteredUsers.length === 0) {
+
+    <p>No users found.</p>
+
+  } @else {
+
+    <ul>
+
+      @for (user of filteredUsers; track user.id) {
+
+        <li>
+
+          <strong>{{ user.name }}</strong>
+          -
+          {{ user.email }}
+
+          <button
+            type="button"
+            (click)="deleteUser(user.id)"
+          >
+            Delete
+          </button>
+
+        </li>
+
+      }
+
+    </ul>
+
+  }
+
+</div>

@@ -1,0 +1,42 @@
+.container {
+  max-width: 700px;
+  margin: 40px auto;
+  font-family: Arial, sans-serif;
+}
+
+h1 {
+  margin-bottom: 30px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: bold;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  margin-bottom: 5px;
+}
+
+button {
+  padding: 8px 14px;
+  margin-top: 5px;
+  cursor: pointer;
+}
+
+.error {
+  display: block;
+  color: red;
+  margin-top: 5px;
+}
+
+li {
+  margin-bottom: 12px;
+}
